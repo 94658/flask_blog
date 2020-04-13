@@ -45,10 +45,11 @@ def register():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        flash('You are logged in!', 'success')
-        return redirect(url_for('home'))
-    else:
-        flash('Login unsuccessful.Check username and password', 'danger')
+        if form.email.data == 'idah@blog.com' and form.password.data == '1':
+            flash('You are logged in!', 'success')
+            return redirect(url_for('home'))
+        else:
+            flash('Login unsuccessful.Check username and password', 'danger')
     return render_template('login.html', title='Login', form=form)
 
 
