@@ -8,13 +8,13 @@ posts = [
         'author': 'I K',
         'title': 'Blog post 1',
         'content': 'First post content',
-        'date_posted': 'April 20, 2018'
+        'date_posted': 'April 20, 2020'
     },
     {
         'author': 'M K',
         'title': 'Blog post 2',
         'content': 'Second post content',
-        'date_posted': 'April 21, 2018'
+        'date_posted': 'April 21, 2020'
     }
 ]
 
@@ -34,6 +34,7 @@ def about():
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
+        
         flash(f'Account created for {form.username.data}!', 'success')
         return redirect(url_for('home'))
     return render_template('register.html', title='Register', form=form)
