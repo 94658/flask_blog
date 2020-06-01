@@ -10,7 +10,7 @@ db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
-login_manager.login_message = 'info'
+login_manager.login_message_category = 'info'
 
 # this file shows that FlaskBlog is a package
 from flaskblog import routes
