@@ -1,5 +1,3 @@
-import os
-
 from flask import Flask
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
@@ -19,7 +17,7 @@ mail = Mail()
 
 def create_app(config_class=Config):
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
+    # app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
     app.config.from_object(Config)
     CsrfProtect(app)
     db.init_app(app)
